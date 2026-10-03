@@ -1,0 +1,24 @@
+{
+    "name": "omnifood/ubereats",
+    "type": "library",
+    "description": "Omnifood Uber Eats: the orders (read, accepted, denied, ready, cancelled), the menu and its items suspended, the store paused and its holiday hours, the webhooks checked - through the Uber Eats Marketplace APIs.",
+    "keywords": ["restaurant", "delivery", "uber-eats", "ubereats", "omnifood"],
+    "license": "LGPL-3.0-or-later",
+    "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
+    "require": {
+        "php": ">=8.2",
+        "glitchr/omnifood": "^1.0@dev",
+        "symfony/http-client": "^6.4|^7.0|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {"Omnifood\\UberEats\\": ""},
+        "exclude-from-classmap": ["/Tests/"]
+    },
+    "autoload-dev": {
+        "psr-4": {"Omnifood\\UberEats\\Tests\\": "Tests/"}
+    },
+    "config": {"sort-packages": true}
+}

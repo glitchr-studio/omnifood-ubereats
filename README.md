@@ -11,6 +11,21 @@ API).
 > (https://developer.uber.com/docs/eats/introduction, read on 2026-10-04) and tested against
 > recorded answers. Check it in Uber's sandbox before a real store.
 
+```php
+use Omnifood\UberEats\UberEatsPlatformFactory;
+use Symfony\Component\HttpClient\HttpClient;
+
+$ubereats = (new UberEatsPlatformFactory(HttpClient::create()))->create([
+    'client_id' => getenv('UBEREATS_CLIENT_ID') ?: null,
+    'client_secret' => getenv('UBEREATS_CLIENT_SECRET') ?: null,   // also signs the webhooks
+    'store_id' => getenv('UBEREATS_STORE_ID') ?: null,
+]);
+```
+
+Plain PHP, no framework needed: the factory takes any `HttpClientInterface` - the application's, a
+`MockHttpClient` in a test - and makes its own when given none. In a Symfony application, the same
+options under `omnifood.platforms` ([the bundle](https://github.com/glitchr-studio/omnifood/blob/1.x/docs/symfony.md)):
+
 ```yaml
 omnifood:
     platforms:

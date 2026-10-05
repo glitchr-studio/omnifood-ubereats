@@ -8,6 +8,22 @@ composer require glitchr/omnifood omnifood/ubereats
 
 ## Configuration
 
+```php
+use Omnifood\UberEats\UberEatsPlatformFactory;
+use Symfony\Component\HttpClient\HttpClient;
+
+$ubereats = (new UberEatsPlatformFactory(HttpClient::create()))->create([
+    'client_id' => getenv('UBEREATS_CLIENT_ID') ?: null,
+    'client_secret' => getenv('UBEREATS_CLIENT_SECRET') ?: null,   // also signs the webhooks
+    'store_id' => getenv('UBEREATS_STORE_ID') ?: null,
+]);
+```
+
+The factory takes any `HttpClientInterface` (the application's, a `MockHttpClient` in a test) and
+makes its own when given none; several platforms go in a `Registry`
+([the core's installation](https://github.com/glitchr-studio/omnifood/blob/1.x/docs/installation.md)).
+In a Symfony application, the same options in `config/packages/omnifood.yaml`:
+
 ```yaml
 # config/packages/omnifood.yaml
 omnifood:

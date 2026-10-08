@@ -94,4 +94,4 @@ the webhook's response time limit, the general rate limits.
   **webhook URL** set in the dashboard (Primary Webhook URL), and the store linked to the
   application (by Uber, or by the merchant through `authorizationUrl()`).
 
-License: LGPL-3.0-or-later.
+License: MIT since 2026-10-09; earlier versions remain published under LGPL-3.0-or-later.

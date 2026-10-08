@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Omnifood Uber Eats: the orders (read, accepted, denied, ready, cancelled), the menu and its items suspended, the store paused and its holiday hours, the webhooks checked - through the Uber Eats Marketplace APIs.",
     "keywords": ["restaurant", "delivery", "uber-eats", "ubereats", "omnifood"],
-    "license": "LGPL-3.0-or-later",
+    "license": "MIT",
     "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
     "require": {
         "php": ">=8.2",
